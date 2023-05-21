@@ -1,0 +1,85 @@
+.container {
+    width: 100%;
+    color: #9E9E9E;
+    background-color: #efefeff1;
+}
+
+.container .group_one {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    grid-gap: 80px;
+    padding: 45px 0px;
+}
+
+.container .group_one .box .content_logo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container .group_one .box .content_logo .pochi_logo{
+    width: 100%;
+}
+
+.container .group_one .box .title_link{
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.container .group_one .box .link{
+    color: #efefef;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.container a {
+    color: #9E9E9E;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container .group_two {
+    padding: 25px 10px;
+   border-top: 0.2px solid #A5A5A5;
+}
+
+.icon:hover {
+    transform: scale(1.06);
+}
+
+@media screen and (max-width: 1024px) {
+    
+.container .group_one {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    display: block;
+    grid-gap: 30px;
+    padding: 35px 0px;
+}
+
+.container .group_one .box .content_logo .pochi_logo {
+    width: 100%;
+}
+
+.container .group_one .box .title_link {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.container .group_two {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+}

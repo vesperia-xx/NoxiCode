@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(180deg, #381CE4 0%, #256CF5 100%);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.list {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.icon {
+    width: 90%;
+}
+
+.icon:hover {
+    transform: scale(1.06);
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        text-align: center;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .icon {
+        width: 60%;
+    }
+    
+    .img {
+        width: 60%;
+    }
+}
