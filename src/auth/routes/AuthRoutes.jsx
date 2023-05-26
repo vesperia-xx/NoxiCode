@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { LoginPage } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
-
+import { PaquetePage } from './../pages/PaquetePage';
 
 export const AuthRoutes = () => {
    
@@ -14,7 +14,8 @@ export const AuthRoutes = () => {
 
             <Route path="*/" element = { <Navigate to= 'home' /> } />
 
-
+            <Route path="paquete" element = { <PaquetePage/> } /> 
+        
         </Routes>
     )
 }

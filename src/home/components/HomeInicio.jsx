@@ -9,7 +9,7 @@ export const HomeInicio = () => {
     <div className={styleInicio.container}>
         <div className={styleInicio.content}>
             <div className={style.title}>
-                Aprende a programar, gratis.
+                ¡Aprende a programar ahora!
             </div>
             <div className={style.text}>
                 “Aprende de forma divertida mientras programas tu futuro con nosotros”.

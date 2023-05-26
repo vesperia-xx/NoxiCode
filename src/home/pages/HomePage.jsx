@@ -6,7 +6,6 @@ import { HomeServ } from '../components/HomeServ'
 import { HomeInfo } from '../components/HomeInfo'
 import { HomeTest } from '../components/HomeTest'
 import { HomeFooter } from '../components/HomeFooter'
-import style from '../styles/home.module.css'
 
 export const HomePage = () => {
   return (

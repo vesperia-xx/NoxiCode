@@ -1,5 +1,5 @@
 import { LogoutOutlined, MenuOutlined } from "@mui/icons-material"
-import { AppBar, Button, Grid, IconButton, Toolbar, Typography } from "@mui/material"
+import { AppBar, Button, Grid, IconButton, Toolbar, Typography, Link } from "@mui/material"
 import logo from '../images/logo_img.png'
 import container from '../images/Container.png'
 
@@ -35,7 +35,10 @@ export const HomeNavBar = ({ drawerWidth = 240 }) => {
           </Grid>
 
           <Grid container direction='row' justifyContent='end' alignItems='center'>
+          <Link href="auth/paquete" underline="none" color="inherit">Paquetes</Link>
+          </Grid>
 
+          <Grid container direction='row' justifyContent='end' alignItems='center'>
 
             <Button  sx={{ mr: 2 }} variant="outlined" href="/auth/login"> Iniciar Sesion </Button>
             <Button variant="contained" href="/auth/register"> <Typography  color="#FFFFFF" > Registrarse </Typography>
