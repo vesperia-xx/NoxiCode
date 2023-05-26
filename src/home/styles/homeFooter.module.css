@@ -51,6 +51,10 @@
    border-top: 0.2px solid #A5A5A5;
 }
 
+.text {
+    color: #9E9E9E;
+}
+
 .icon:hover {
     transform: scale(1.06);
 }

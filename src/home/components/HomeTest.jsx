@@ -8,11 +8,6 @@ export const HomeTest = () => {
   return (
     <>
     <div className={styleTest.container}>
-        <div className={styleTest.title_content}>
-        <div className={style.title}>
-            Opiniones de nuestros usuarios.
-        </div>
-        </div>
         <div className={styleTest.testimonios}>
         <div className={styleTest.testimonio}>
             <div className={styleTest.perfil}>

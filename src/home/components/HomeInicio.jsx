@@ -12,7 +12,7 @@ export const HomeInicio = () => {
                 Aprende a programar, gratis.
             </div>
             <div className={style.text}>
-                “Aprende de forma gratis y divertida mientras programas tu futuro con nosotros”.
+                “Aprende de forma divertida mientras programas tu futuro con nosotros”.
             </div>
             <div>
                     <Button variant="contained" href="/auth/register" className={styleInicio.button}>

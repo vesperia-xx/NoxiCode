@@ -7,9 +7,6 @@ export const HomeBook = () => {
     <>
     <div className={styleInicio.container}>
         <div className={styleInicio.content}>
-            <div className={style.subtitle}>
-                ¿Quieres aprender a programar como profesional?
-            </div>
             <div className={style.title}>
                 Empieza con nuestros cursos.
             </div>

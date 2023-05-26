@@ -20,7 +20,7 @@ export const HomeFooter = () => {
           <div className={styleFooter.box}>
             <h2 className={styleFooter.title_link}>EMPRESA</h2>
             <a href="/home" className={style.text}>
-              Sobre nosotros
+              Sobre nosotros.
             </a>
           </div>
           <div  className={styleFooter.box}>
@@ -37,7 +37,7 @@ export const HomeFooter = () => {
           </div>
         </div>
         <div className={styleFooter.group_two}>
-        <div className={style.text}>
+        <div className={styleFooter.text}>
           Copyright &copy; 2023 <b>NoxiCode.</b> - Todos los Derechos Reservados. 
         </div>
     </div>
