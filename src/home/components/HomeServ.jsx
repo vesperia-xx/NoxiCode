@@ -20,7 +20,7 @@ export const HomeServ = () => {
                     Variedad de cursos especializados.
                     </div>
                     <div className={style.text}>
-                    Explora una amplia gama de cursos en diferentes áreas de la programación, como desarrollo web, redes, seguridad informática.
+                    Explora una amplia gama de cursos en diferentes áreas de la programación, como desarrollo web, redes y seguridad informática.
                     </div>
                 </div>
                 <div className={styleServ.content}>
