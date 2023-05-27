@@ -36,6 +36,12 @@ export const journalSlice = createSlice({
                 return curso;
             });
         },
+
+        setPhotosToActiveNote: (state, action) => {
+            state.active.imageUrls = [...state.active.imageUrls, ...action.payload]
+            state.isSaving = false;
+        },
+
         deleteNoteById: (state, action) => {
 
         },
@@ -50,4 +56,5 @@ export const { addNewEmptyNote,
     deleteNoteById,
     increment,
     savingNewNote,
+    setPhotosToActiveNote,
 } = journalSlice.actions;
