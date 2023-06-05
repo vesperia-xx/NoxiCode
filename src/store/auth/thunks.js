@@ -2,7 +2,7 @@ import { doc, setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
 import { registerUserWithEmailPassword, singInWithGoogle, loginWithEmailPassword, logoutFirebase } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./authSlice"
-import { setSaving, updateNote } from "../journal/journalSlice";
+import { clearNotesLogout, setSaving, updateNote } from "../journal/journalSlice";
 
 export const checkingAuthentication = () => {
   return async (dispatch) => {
@@ -61,7 +61,7 @@ export const startLogout = () => {
   return async (dispatch) => {
 
     await logoutFirebase();
-
+    dispatch(clearNotesLogout());
     dispatch(logout());
 
   }

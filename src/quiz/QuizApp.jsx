@@ -44,10 +44,7 @@ function QuizApp() {
             {" "}
             Obtuviste {puntuación} de {preguntas.length}{" "}
           </span>
-          <button  onClick={() => (window.location.href = "/")}>
-            {" "}
-            Volver a jugar
-          </button>
+          
           <button
             onClick={() => {
               setIsFinished(false);

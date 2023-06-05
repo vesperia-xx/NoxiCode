@@ -1,4 +1,4 @@
-import { SaveOutlined, UploadOutlined } from "@mui/icons-material"
+import { DeleteOutline, SaveOutlined, UploadOutlined } from "@mui/icons-material"
 import { Button, Grid, IconButton, TextField, Typography } from "@mui/material"
 import { ImageGallery } from "../components/ImageGallery"
 import 'animate.css';
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { setActiveNote } from "../../store/journal/journalSlice";
 import { startSaveNote } from "../../store/auth/thunks";
-import { startUploadingFiles } from "../../store/journal/thunks";
+import { startDeletingNote, startUploadingFiles } from "../../store/journal/thunks";
 import QuizApp from "../../quiz/QuizApp";
 
 
@@ -41,6 +41,10 @@ export const NoteView = () => {
 
   const showQuiz = () => {
     setQuiz(true)
+  }
+
+  const onDelete = () => {
+    dispatch(startDeletingNote())
   }
 
   return (
@@ -110,6 +114,18 @@ export const NoteView = () => {
 
         </Grid>
 
+        <Grid container justifyContent='end'>
+          <Button
+            onClick={onDelete}
+            sx={{ mt: 2 }}
+            color='error'
+          >
+            <DeleteOutline>
+              Borrar
+            </DeleteOutline>
+          </Button>
+        </Grid>
+
         <ImageGallery images={curso.imageUrls} />
 
 
@@ -127,8 +143,8 @@ export const NoteView = () => {
         {
           (quiz === true)
             ? <QuizApp />
-            :  ''
-      }
+            : ''
+        }
 
       </Grid>
 
