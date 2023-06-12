@@ -35,7 +35,7 @@ export const HomeNavBar = ({ drawerWidth = 240 }) => {
           </Grid>
 
           <Grid container direction='row' justifyContent='end' alignItems='center'>
-          <Link href="auth/paquete" underline="none" color="inherit">Paquetes</Link>
+          <Link href="/auth/paquete" underline="none" color="inherit">Paquetes</Link>
           </Grid>
 
           <Grid container direction='row' justifyContent='end' alignItems='center'>
