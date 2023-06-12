@@ -1,6 +1,6 @@
 
-  
   .app {
+    margin-top: 20px;
     background-color: #00b0f6;
     max-width: 650px;
     min-width: 450px;
@@ -35,7 +35,7 @@
   }
   
   .lado-derecho {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,8 +51,6 @@
   }
   
   /* GRAL */
-  
-  
   .tiempo-restante {
     font-size: 14px;
     color: #000000;
@@ -72,6 +70,20 @@
   .btns-container {
     display: flex;
     justify-content: space-evenly;
+  }
+
+  button {
+    background-color: #FFF;
+    border: none; 
+    color: #111216; 
+    padding: 4px 8px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 16px; 
+    border-radius: 20px;
+    transition-duration: 0.4s; 
+    cursor: pointer; 
   }
   
   button:hover {

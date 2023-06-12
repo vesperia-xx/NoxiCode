@@ -1,5 +1,6 @@
 import { DeleteOutline, SaveOutlined, UploadOutlined } from "@mui/icons-material"
-import { Button, Grid, IconButton, TextField, Typography } from "@mui/material"
+import { Button, Grid, IconButton, TextField, Typography, Modal } from "@mui/material"
+import { Close } from "@mui/icons-material";
 import { ImageGallery } from "../components/ImageGallery"
 import 'animate.css';
 import { useForm } from "../../hooks/useForm";
@@ -10,12 +11,11 @@ import { startSaveNote } from "../../store/auth/thunks";
 import { startDeletingNote, startUploadingFiles } from "../../store/journal/thunks";
 import QuizApp from "../../quiz/QuizApp";
 
-
 export const NoteView = () => {
-
   const dispatch = useDispatch();
 
-  const [quiz, setQuiz] = useState(false)
+  const [quiz, setQuiz] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const { active: curso } = useSelector(state => state.journal)
 
@@ -33,18 +33,24 @@ export const NoteView = () => {
 
   const onFileInputChange = ({ target }) => {
     if (target.files === 0) return;
-
-
     dispatch(startUploadingFiles(target.files));
-
   }
 
   const showQuiz = () => {
-    setQuiz(true)
+    setModalOpen(true);
   }
 
   const onDelete = () => {
     dispatch(startDeletingNote())
+  }
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  }
+
+  const handleQuizStart = () => {
+    setQuiz(true);
+    setModalOpen(false);
   }
 
   return (
@@ -109,9 +115,6 @@ export const NoteView = () => {
             value={body}
             onChange={onInputChange}
           />
-
-
-
         </Grid>
 
         <Grid container justifyContent='end'>
@@ -128,9 +131,7 @@ export const NoteView = () => {
 
         <ImageGallery images={curso.imageUrls} />
 
-
       </Grid>
-
 
       <Grid container direction='row' justifyContent='center' alignItems='center' sx={{ mb: 1, ml: 10 }}>
         <Button variant="contained" onClick={showQuiz}>
@@ -139,16 +140,74 @@ export const NoteView = () => {
       </Grid>
 
       <Grid container direction='row' justifyContent='center' alignItems='center' sx={{ mb: 1, ml: 10 }}>
-
-        {
-          (quiz === true)
-            ? <QuizApp />
-            : ''
-        }
-
+        {quiz && <QuizApp />}
       </Grid>
 
+      {/* Modal de advertencia */}
+      <Modal
+        open={modalOpen}
+        onClose={handleModalClose}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            backgroundColor: "#00b0f6",
+            borderRadius: "10px",
+            p: 4,
+            outline: "none",
+            maxWidth: "400px",
+            width: "100%",
+          }}
+        >
+          <Grid item xs={12} sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <Close onClick={handleModalClose} sx={{ cursor: "pointer" }} />
+          </Grid>
+          <Grid item xs={12} sx={{ mb: 4 }}>
+            <Typography variant="h6" id="modal-title" align="center" fontWeight="bold" color="#2c2f3a">
+              ¿Estás seguro de que deseas iniciar el quiz?
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Button
+              variant="contained"
+              onClick={handleQuizStart}
+              fullWidth
+              sx={{
+                backgroundColor: "#2f922f",
+                color: "white",
+                marginRight: "8px",
+              }}
+            >
+              Iniciar
+            </Button>
+          </Grid>
+          <Grid item xs={6}>
+            <Button
+              variant="contained"
+              onClick={handleModalClose}
+              fullWidth
+              sx={{
+                backgroundColor: "#ff3333",
+                color: "white",
+                marginLeft: "8px",
+              }}
+            >
+              Cancelar
+            </Button>
+          </Grid>
+        </Grid>
+      </Modal>
 
     </>
   )
 }
+
