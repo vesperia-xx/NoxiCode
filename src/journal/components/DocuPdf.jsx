@@ -9,8 +9,8 @@ export const DocuPdf = () => {
                 <View>
                    
                     <Image 
-                    src="https://i.postimg.cc/26XJSkzb/Certificado-Noxicode.png" 
-                    style={{height:"840"}}
+                    src="https://i.postimg.cc/wjyghXKg/Screenshot-2023-06-17-204352.png" 
+                    
                     />
                     
                 </View>

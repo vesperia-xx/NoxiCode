@@ -10,6 +10,7 @@ import { setActiveNote } from "../../store/journal/journalSlice";
 import { startSaveNote } from "../../store/auth/thunks";
 import { startDeletingNote, startUploadingFiles } from "../../store/journal/thunks";
 import QuizApp from "../../quiz/QuizApp";
+import CustomizedSwitches from "../components/Switch";
 
 export const NoteView = () => {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ export const NoteView = () => {
   return (
     <>
       <Grid container direction='row' justifyContent='center' alignItems='center' sx={{ mb: 1 }} className="animate__animated animate__fadeIn animate__faster">
-
+      <CustomizedSwitches/>
         <Grid item>
           <Typography fontSize={39} fontWeight='light' sx={{ ml: 30 }}> </Typography>
         </Grid>
@@ -67,6 +68,7 @@ export const NoteView = () => {
 
         <Grid item>
 
+         
           <input
             type="file"
             multiple
